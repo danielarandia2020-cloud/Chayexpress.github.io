@@ -1,0 +1,777 @@
+:root {
+    --chay-rojo: #b30000;
+    --chay-rojo-fuerte: #7a0000;
+    --chay-naranja: #e62e00;
+    --chay-naranja-claro: #ff6600;
+    --chay-amarillo: #ffcc00;
+    --chay-crema: #fffdf5;
+    --chay-texto: #2b2b2b;
+    --bs-primary: var(--chay-rojo);
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--chay-crema);
+    color: var(--chay-texto);
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Poppins', Georgia, serif;
+    font-weight: 700;
+}
+
+a {
+    color: var(--chay-rojo-fuerte);
+}
+
+/* ---------- Navbar ---------- */
+.navbar-chay {
+    background: linear-gradient(90deg, var(--chay-rojo), var(--chay-naranja));
+}
+
+.menu-page {
+    padding-top: 65px;
+}
+
+.menu-page .navbar-chay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1040;
+}
+
+.navbar-chay .navbar-brand img {
+    height: 42px;
+    margin-right: 8px;
+}
+
+.navbar-chay .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px !important;
+    transition: 0.25s;
+}
+
+.navbar-chay .nav-link:hover,
+.navbar-chay .nav-link.active {
+    background-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte) !important;
+}
+
+.navbar-chay #botonCarrito {
+    position: relative;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    min-width: 18px;
+    padding: 2px 5px;
+    font-size: 0.68rem;
+    line-height: 1.1;
+}
+
+/* ---------- Carrusel de inicio ---------- */
+.carousel-chay .carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.carousel-chay .carousel-caption {
+    left: 5%;
+    right: auto;
+    max-width: 480px;
+    text-align: left;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-chay .carousel-caption h2 {
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-chay .carousel-link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carousel-chay .carousel-link img {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-chay .carousel-link:hover img,
+.carousel-chay .carousel-link:focus-visible img {
+    filter: brightness(0.75);
+    transform: scale(1.02);
+}
+
+.carousel-chay .carousel-link:hover .carousel-caption h2::after,
+.carousel-chay .carousel-link:focus-visible .carousel-caption h2::after {
+    content: " →";
+}
+
+@media (max-width: 650px) {
+    .carousel-chay .carousel-item img {
+        height: 260px;
+    }
+    .carousel-chay .carousel-caption h2 {
+        font-size: 1.4rem;
+    }
+    .carousel-chay .carousel-caption p {
+        display: none;
+    }
+}
+
+/* ---------- Buscador ---------- */
+.buscador-chay {
+    max-width: 500px;
+    margin: -28px auto 30px;
+    position: relative;
+    z-index: 5;
+}
+
+.buscador-chay .form-control {
+    border-radius: 30px 0 0 30px;
+    border: 2px solid var(--chay-amarillo);
+}
+
+.buscador-chay .btn {
+    border-radius: 0 30px 30px 0;
+    background-color: var(--chay-rojo);
+    color: white;
+    border: 2px solid var(--chay-rojo);
+}
+
+/* ---------- Categorías ---------- */
+.categoria-chip {
+    display: inline-block;
+    background-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte);
+    padding: 10px 20px;
+    margin: 4px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.25s;
+    cursor: pointer;
+    border: none;
+}
+
+.categoria-chip:hover,
+.categoria-chip.active {
+    background-color: var(--chay-rojo);
+    color: white;
+}
+
+/* ---------- Tarjetas de producto ---------- */
+.card-producto {
+    position: relative;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    transition: transform 0.25s ease;
+    height: 100%;
+}
+
+.card-producto:hover {
+    transform: translateY(-6px);
+}
+
+.card-producto img {
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-producto .card-title {
+    color: var(--chay-naranja);
+    font-weight: 700;
+}
+
+.card-producto .precio-tag {
+    display: inline-block;
+    background-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.card-producto .boton-agregar-rapido {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte);
+    font-size: 1.5rem;
+    line-height: 1;
+    z-index: 2;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-producto .boton-agregar-rapido:hover {
+    background: #e6b800;
+    color: var(--chay-rojo-fuerte);
+    transform: scale(1.1);
+}
+
+.card-producto .btn-agregar {
+    background-color: var(--chay-rojo);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.card-producto .btn-agregar:hover {
+    background-color: var(--chay-rojo-fuerte);
+}
+
+.btn-agregar {
+    background-color: var(--chay-amarillo);
+    border-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte);
+    font-weight: 700;
+}
+
+.btn-agregar:hover,
+.btn-agregar:focus {
+    background-color: #e6b800;
+    border-color: #e6b800;
+    color: var(--chay-rojo-fuerte);
+}
+
+.btn-agregar.producto-agregado {
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+    animation: producto-agregado 0.55s ease;
+}
+
+@keyframes producto-agregado {
+    0% { transform: scale(1); }
+    45% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- Destacados / combos ---------- */
+.seccion-destacados {
+    background-color: #fff2e0;
+    padding: 50px 0;
+}
+
+.badge-destacado {
+    background-color: var(--chay-naranja-claro);
+}
+
+/* ---------- Formularios ---------- */
+.pagina-formulario {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/fondo-secundario.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-formulario {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-formulario .btn-primary {
+    background-color: var(--chay-rojo);
+    border: none;
+}
+
+.card-formulario .btn-primary:hover {
+    background-color: var(--chay-rojo-fuerte);
+}
+
+.form-control:focus {
+    border-color: var(--chay-naranja);
+    box-shadow: 0 0 0 0.2rem rgba(230, 46, 0, 0.15);
+}
+
+/* ---------- Página de producto ---------- */
+.producto-imagen-grande {
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.opcion-personalizacion {
+    display: inline-block;
+    margin: 4px 6px 4px 0;
+}
+
+/* ---------- Footer ---------- */
+footer.footer-chay {
+    background: linear-gradient(90deg, var(--chay-rojo), var(--chay-naranja));
+    color: white;
+    padding: 30px 0;
+}
+
+footer.footer-chay a {
+    color: var(--chay-amarillo);
+    text-decoration: none;
+}
+
+/* ---------- Cuenta ---------- */
+.avatar-cuenta {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--chay-amarillo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--chay-rojo-fuerte);
+    margin: 0 auto 12px;
+}
+
+/* ---------- Buscador dentro del nav ---------- */
+.nav-buscador {
+    min-width: 200px;
+}
+
+.nav-buscador .form-control {
+    border-radius: 20px;
+    border: none;
+    padding-left: 14px;
+}
+
+.nav-buscador .form-control::placeholder {
+    color: #999;
+}
+
+@media (max-width: 991px) {
+    .nav-buscador {
+        margin: 8px 0;
+        width: 100%;
+    }
+}
+.btn-cta {
+    display: inline-block;
+    background-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte) !important;
+    font-weight: bold;
+    border: none;
+    padding: 10px 26px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.btn-cta:hover {
+    background-color: #fff;
+    color: var(--chay-rojo-fuerte) !important;
+}
+
+/* ---------- Mega Menú (dropdown "Menú" del navbar) ---------- */
+.mega-menu {
+    border: none;
+    border-top: 4px solid var(--chay-amarillo);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 12px 12px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
+}
+
+.mega-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.mega-menu-titulo {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--chay-rojo-fuerte);
+    border-bottom: 2px solid var(--chay-amarillo);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+}
+
+.mega-menu-combos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.mega-menu-combo {
+    flex: 1 1 140px;
+    max-width: 160px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--chay-texto);
+    transition: transform 0.2s ease;
+}
+
+.mega-menu-combo:hover {
+    transform: translateY(-4px);
+    color: var(--chay-naranja);
+}
+
+.mega-menu-combo img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+.mega-menu-combo span {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.mega-menu-categoria {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--chay-naranja);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.mega-menu-categoria img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 6px;
+}
+
+.mega-menu-categoria span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.mega-menu-productos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.82rem;
+}
+
+.mega-menu-productos li {
+    margin-bottom: 4px;
+}
+
+.mega-menu-productos a {
+    color: var(--chay-texto);
+    text-decoration: none;
+}
+
+.mega-menu-productos a:hover {
+    color: var(--chay-naranja);
+    text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+    .mega-menu {
+        border-top: none;
+        border-radius: 8px;
+        box-shadow: none;
+        background-color: #fffaf0;
+    }
+}
+
+/* ---------- Footer en columnas ---------- */
+footer.footer-chay {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.25s;
+}
+
+.footer-social a:hover {
+    background-color: var(--chay-amarillo);
+    color: var(--chay-rojo-fuerte);
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+footer.footer-chay hr {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- Mi Cuenta: pestañas ---------- */
+.cuenta-sidebar .nav-link {
+    color: var(--chay-texto);
+    border-radius: 10px;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.cuenta-sidebar .nav-link.active {
+    background-color: var(--chay-rojo);
+    color: white;
+}
+
+.cuenta-sidebar .nav-link:hover:not(.active) {
+    background-color: #ffe9d6;
+}
+
+
+/* ---------- Layout sticky footer (todas las páginas) ---------- */
+html, body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------- Tarjetas de Categorías (index, debajo del carrusel) ---------- */
+.categoria-card {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--chay-texto);
+    background: white;
+    border-radius: 14px;
+    padding: 14px 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+    color: var(--chay-naranja);
+}
+
+.categoria-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 3px solid var(--chay-amarillo);
+}
+
+.categoria-card span {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Resalta la pestaña de categoría activa mientras se hace scroll (Scrollspy) */
+.categoria-tab.active {
+    color: var(--chay-rojo-fuerte);
+    border-bottom-color: var(--chay-rojo);
+}
+
+.categoria-tab.active img {
+    border-color: var(--chay-amarillo);
+}
+
+/* ---------- Pestañas de categoría (menú estilo El Corral) ---------- */
+.menu-tabs-wrapper {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 65px;
+    z-index: 1010;
+}
+
+.menu-tabs-wrapper.menu-tabs-fixed {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1010;
+}
+
+main.menu-tabs-fixed-space {
+    padding-top: 90px;
+}
+
+.menu-tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 12px 0;
+    scrollbar-width: thin;
+}
+
+.categoria-tab {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    min-width: 90px;
+    color: var(--chay-texto);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.categoria-tab img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.categoria-tab:hover {
+    color: var(--chay-naranja);
+}
+
+.categoria-tab.active {
+    color: var(--chay-rojo-fuerte);
+    border-bottom-color: var(--chay-rojo);
+}
+
+.categoria-tab.active img {
+    border-color: var(--chay-amarillo);
+}
+
+main section[id^="cat-"] {
+    scroll-margin-top: 145px;
+}
+
+.menu-categoria-titulo {
+    color: var(--chay-naranja);
+    border-bottom: 3px solid var(--chay-amarillo);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* 5 tarjetas por fila en desktop (Bootstrap no trae col-lg-2.4 nativo) */
+@media (min-width: 992px) {
+    .col-lg-2dot4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+/* ---------- Formularios con íconos ---------- */
+.input-icon-group .input-group-text {
+    background-color: var(--chay-amarillo);
+    border: none;
+    color: var(--chay-rojo-fuerte);
+}
+
+.input-icon-group .form-control,
+.input-icon-group .form-select {
+    border-left: none;
+}
+
+/* ---------- Carrusel: texto centrado ---------- */
+.carousel-chay .carousel-caption.centrado {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 20px 30px;
+    border-radius: 16px;
+}
+
+@media (max-width: 650px) {
+    .menu-tabs-wrapper {
+        top: 70px;
+    }
+    .menu-tabs-wrapper.menu-tabs-fixed {
+        top: 70px;
+    }
+    .categoria-tab img {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* CHAY Backend / app-like category carousel */
+.categorias-carousel{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    padding:8px 4px 14px;
+    scroll-snap-type:x mandatory
+}.categorias-carousel>.col{
+    flex:0 0 150px;
+    scroll-snap-align:start
+}.categorias-carousel::-webkit-scrollbar{
+    height:7px
+}

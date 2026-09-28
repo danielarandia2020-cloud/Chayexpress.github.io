@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Acceso Admin — CHAY Express</title>
+
+	<link rel="icon" href="../img/isotipo.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/estilos.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<main class="pagina-formulario flex-grow-1">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-sm-8 col-md-5 col-lg-4">
+					<div class="card card-formulario p-4">
+						<h1 class="h4 text-center">🔐 Panel administrativo</h1>
+						<p class="text-muted text-center">Acceso exclusivo para administradores.</p>
+
+						<form id="formAdminLogin">
+							<input class="form-control mb-3" id="adminEmail" type="email" placeholder="Correo" required>
+							<input class="form-control mb-3" id="adminPass" type="password" placeholder="Contraseña" required>
+							<button class="btn btn-primary w-100">Ingresar</button>
+						</form>
+
+						<div id="adminMsg" class="mensaje mt-3"></div>
+						<a href="index.html" class="enlace d-block mt-3">← Volver al sitio</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="../js/api.js"></script>
+	<script src="../js/admin-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú — CHAY Express</title>
+    <link rel="icon" href="../img/isotipo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="menu-page d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#navCategoriasScroll" data-bs-offset="150" data-bs-smooth-scroll="true" tabindex="0">
+
+<nav class="navbar navbar-expand-lg navbar-chay sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="../img/isotipo.png" alt="Isotipo CHAY Express">
+            <span>CHAY Express</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navChay" aria-controls="navChay" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navChay">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2 align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="menu.html"><i class="bi bi-journal-text"></i> Menú</a></li>
+                <li class="nav-item">
+                    <form class="d-flex nav-buscador" role="search" method="GET" action="menu.html">
+                        <input class="form-control form-control-sm" type="search" name="buscar" placeholder="Buscar en el menú..." aria-label="Buscar productos" value="">
+                    </form>
+                </li>
+                <li class="nav-item nav-solo-usuario d-none"><a class="nav-link" href="cuenta.html" title="Mi Cuenta"><i class="bi bi-person-circle fs-5"></i></a></li>
+                <li class="nav-item nav-solo-invitado"><a class="nav-link" href="inicio_sesion.html" title="Ingresar"><i class="bi bi-person-circle fs-5"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="botonCarrito" title="Carrito"><i class="bi bi-cart3 fs-5"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="text-center py-4" style="background: linear-gradient(90deg, var(--chay-rojo), var(--chay-naranja)); color: white;">
+    <h1 class="mb-1">Nuestro Menú</h1>
+    <p class="mb-0">Lo más rico, recién hecho y a tu gusto</p>
+</header>
+
+<!-- ===== BARRA DE CATEGORÍAS (sticky + Scrollspy) ===== -->
+<div class="menu-tabs-wrapper">
+    <div class="container">
+        <nav class="menu-tabs" id="navCategoriasScroll">
+            <a class="categoria-tab" href="menu.html#cat-hamburguesas">
+                <img src="../img/categorias/hamburguesas.jpg" alt="Hamburguesas">
+                <span>Hamburguesas</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-pizzas">
+                <img src="../img/categorias/pizzas.jpg" alt="Pizzas">
+                <span>Pizzas</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-perros">
+                <img src="../img/categorias/perros.jpg" alt="Perros Calientes">
+                <span>Perros Calientes</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-salchipapas">
+                <img src="../img/categorias/salchipapas.jpg" alt="Salchipapas">
+                <span>Salchipapas</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-postres">
+                <img src="../img/categorias/postres.jpg" alt="Postres">
+                <span>Postres</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-bebidas">
+                <img src="../img/categorias/bebidas.jpg" alt="Bebidas">
+                <span>Bebidas</span>
+            </a>
+            <a class="categoria-tab" href="menu.html#cat-combos">
+                <img src="../img/categorias/combos.jpg" alt="Combos">
+                <span>Combos</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+<main class="container flex-grow-1 pb-5">
+        <section id="cat-hamburguesas" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Hamburguesas</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="hamburguesa-clasica-con-queso"
+                             data-nombre="Hamburguesa Clásica con Queso"
+                             data-descripcion="Carne, queso, lechuga, tomate y salsa especial"
+                             data-precio="18000"
+                             data-imagen="../img/productos/hamburguesas-1.jpg">
+                            <img src="../img/productos/hamburguesas-1.jpg" class="card-img-top" alt="Hamburguesa Clásica con Queso">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Hamburguesa Clásica con Queso</h3>
+                                <p class="small text-muted mb-2">Carne, queso, lechuga, tomate y salsa especial</p>
+                                <span class="precio-tag d-block">$ 18,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="hamburguesa-doble-carne"
+                             data-nombre="Hamburguesa Doble Carne"
+                             data-descripcion="Doble carne, doble queso, mucho sabor"
+                             data-precio="24000"
+                             data-imagen="../img/productos/hamburguesas-2.jpg">
+                            <img src="../img/productos/hamburguesas-2.jpg" class="card-img-top" alt="Hamburguesa Doble Carne">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Hamburguesa Doble Carne</h3>
+                                <p class="small text-muted mb-2">Doble carne, doble queso, mucho sabor</p>
+                                <span class="precio-tag d-block">$ 24,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="hamburguesa-bbq-tocineta"
+                             data-nombre="Hamburguesa BBQ Tocineta"
+                             data-descripcion="Carne, tocineta, cebolla crispy y salsa BBQ"
+                             data-precio="22000"
+                             data-imagen="../img/productos/hamburguesas-3.jpg">
+                            <img src="../img/productos/hamburguesas-3.jpg" class="card-img-top" alt="Hamburguesa BBQ Tocineta">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Hamburguesa BBQ Tocineta</h3>
+                                <p class="small text-muted mb-2">Carne, tocineta, cebolla crispy y salsa BBQ</p>
+                                <span class="precio-tag d-block">$ 22,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="hamburguesa-gourmet-chay"
+                             data-nombre="Hamburguesa Gourmet CHAY"
+                             data-descripcion="Carne premium, queso cheddar y cebolla caramelizada"
+                             data-precio="26000"
+                             data-imagen="../img/productos/hamburguesas-4.jpg">
+                            <img src="../img/productos/hamburguesas-4.jpg" class="card-img-top" alt="Hamburguesa Gourmet CHAY">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Hamburguesa Gourmet CHAY</h3>
+                                <p class="small text-muted mb-2">Carne premium, queso cheddar y cebolla caramelizada</p>
+                                <span class="precio-tag d-block">$ 26,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="hamburguesa-vegetariana"
+                             data-nombre="Hamburguesa Vegetariana"
+                             data-descripcion="Base vegetal, queso, lechuga, tomate y salsa especial"
+                             data-precio="20000"
+                             data-imagen="../img/productos/hamburguesas-5.jpg">
+                            <img src="../img/productos/hamburguesas-5.jpg" class="card-img-top" alt="Hamburguesa Vegetariana">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Hamburguesa Vegetariana</h3>
+                                <p class="small text-muted mb-2">Base vegetal, queso, lechuga, tomate y salsa especial</p>
+                                <span class="precio-tag d-block">$ 20,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-pizzas" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Pizzas</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="pizza-personal-de-pepperoni"
+                             data-nombre="Pizza Personal de Pepperoni"
+                             data-descripcion="Salsa de tomate, mozzarella y pepperoni"
+                             data-precio="22000"
+                             data-imagen="../img/productos/pizzas-1.jpg">
+                            <img src="../img/productos/pizzas-1.jpg" class="card-img-top" alt="Pizza Personal de Pepperoni">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Pizza Personal de Pepperoni</h3>
+                                <p class="small text-muted mb-2">Salsa de tomate, mozzarella y pepperoni</p>
+                                <span class="precio-tag d-block">$ 22,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="pizza-personal-hawaiana"
+                             data-nombre="Pizza Personal Hawaiana"
+                             data-descripcion="Jamón, piña y mozzarella"
+                             data-precio="22000"
+                             data-imagen="../img/productos/pizzas-2.jpg">
+                            <img src="../img/productos/pizzas-2.jpg" class="card-img-top" alt="Pizza Personal Hawaiana">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Pizza Personal Hawaiana</h3>
+                                <p class="small text-muted mb-2">Jamón, piña y mozzarella</p>
+                                <span class="precio-tag d-block">$ 22,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="pizza-personal-de-pollo"
+                             data-nombre="Pizza Personal de Pollo"
+                             data-descripcion="Pollo desmechado, maíz y mozzarella"
+                             data-precio="23000"
+                             data-imagen="../img/productos/pizzas-3.jpg">
+                            <img src="../img/productos/pizzas-3.jpg" class="card-img-top" alt="Pizza Personal de Pollo">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Pizza Personal de Pollo</h3>
+                                <p class="small text-muted mb-2">Pollo desmechado, maíz y mozzarella</p>
+                                <span class="precio-tag d-block">$ 23,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="pizza-personal-vegetariana"
+                             data-nombre="Pizza Personal Vegetariana"
+                             data-descripcion="Vegetales frescos y mozzarella"
+                             data-precio="21000"
+                             data-imagen="../img/productos/pizzas-4.jpg">
+                            <img src="../img/productos/pizzas-4.jpg" class="card-img-top" alt="Pizza Personal Vegetariana">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Pizza Personal Vegetariana</h3>
+                                <p class="small text-muted mb-2">Vegetales frescos y mozzarella</p>
+                                <span class="precio-tag d-block">$ 21,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="pizza-personal-cuatro-quesos"
+                             data-nombre="Pizza Personal Cuatro Quesos"
+                             data-descripcion="Mezcla de quesos derretidos"
+                             data-precio="24000"
+                             data-imagen="../img/productos/pizzas-5.jpg">
+                            <img src="../img/productos/pizzas-5.jpg" class="card-img-top" alt="Pizza Personal Cuatro Quesos">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Pizza Personal Cuatro Quesos</h3>
+                                <p class="small text-muted mb-2">Mezcla de quesos derretidos</p>
+                                <span class="precio-tag d-block">$ 24,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-perros" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Perros Calientes</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="perro-caliente-especial"
+                             data-nombre="Perro Caliente Especial"
+                             data-descripcion="Salchicha, queso derretido, papas y salsas"
+                             data-precio="15000"
+                             data-imagen="../img/productos/perros-1.jpg">
+                            <img src="../img/productos/perros-1.jpg" class="card-img-top" alt="Perro Caliente Especial">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Perro Caliente Especial</h3>
+                                <p class="small text-muted mb-2">Salchicha, queso derretido, papas y salsas</p>
+                                <span class="precio-tag d-block">$ 15,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="perro-caliente-clasico"
+                             data-nombre="Perro Caliente Clásico"
+                             data-descripcion="Salchicha, papas de paquete y salsas de la casa"
+                             data-precio="12000"
+                             data-imagen="../img/productos/perros-2.jpg">
+                            <img src="../img/productos/perros-2.jpg" class="card-img-top" alt="Perro Caliente Clásico">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Perro Caliente Clásico</h3>
+                                <p class="small text-muted mb-2">Salchicha, papas de paquete y salsas de la casa</p>
+                                <span class="precio-tag d-block">$ 12,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="perro-caliente-ranchero"
+                             data-nombre="Perro Caliente Ranchero"
+                             data-descripcion="Salchicha, tocineta, queso y cebolla crispy"
+                             data-precio="17000"
+                             data-imagen="../img/productos/perros-3.jpg">
+                            <img src="../img/productos/perros-3.jpg" class="card-img-top" alt="Perro Caliente Ranchero">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Perro Caliente Ranchero</h3>
+                                <p class="small text-muted mb-2">Salchicha, tocineta, queso y cebolla crispy</p>
+                                <span class="precio-tag d-block">$ 17,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="perro-caliente-doble-salchicha"
+                             data-nombre="Perro Caliente Doble Salchicha"
+                             data-descripcion="Dos salchichas, queso y salsas"
+                             data-precio="18000"
+                             data-imagen="../img/productos/perros-4.jpg">
+                            <img src="../img/productos/perros-4.jpg" class="card-img-top" alt="Perro Caliente Doble Salchicha">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Perro Caliente Doble Salchicha</h3>
+                                <p class="small text-muted mb-2">Dos salchichas, queso y salsas</p>
+                                <span class="precio-tag d-block">$ 18,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="perro-caliente-mexicano"
+                             data-nombre="Perro Caliente Mexicano"
+                             data-descripcion="Salchicha, guacamole y jalapeños"
+                             data-precio="17000"
+                             data-imagen="../img/productos/perros-5.jpg">
+                            <img src="../img/productos/perros-5.jpg" class="card-img-top" alt="Perro Caliente Mexicano">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Perro Caliente Mexicano</h3>
+                                <p class="small text-muted mb-2">Salchicha, guacamole y jalapeños</p>
+                                <span class="precio-tag d-block">$ 17,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-salchipapas" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Salchipapas</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="salchipapa-tradicional"
+                             data-nombre="Salchipapa Tradicional"
+                             data-descripcion="Papas crocantes con salchicha y salsas"
+                             data-precio="12000"
+                             data-imagen="../img/productos/salchipapas-1.jpg">
+                            <img src="../img/productos/salchipapas-1.jpg" class="card-img-top" alt="Salchipapa Tradicional">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Salchipapa Tradicional</h3>
+                                <p class="small text-muted mb-2">Papas crocantes con salchicha y salsas</p>
+                                <span class="precio-tag d-block">$ 12,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="papas-fritas-locas"
+                             data-nombre="Papas Fritas Locas"
+                             data-descripcion="Con tocineta, queso fundido y salsas especiales"
+                             data-precio="14000"
+                             data-imagen="../img/productos/salchipapas-2.jpg">
+                            <img src="../img/productos/salchipapas-2.jpg" class="card-img-top" alt="Papas Fritas Locas">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Papas Fritas Locas</h3>
+                                <p class="small text-muted mb-2">Con tocineta, queso fundido y salsas especiales</p>
+                                <span class="precio-tag d-block">$ 14,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="salchipapa-ranchera"
+                             data-nombre="Salchipapa Ranchera"
+                             data-descripcion="Papas, salchicha, tocineta y queso"
+                             data-precio="16000"
+                             data-imagen="../img/productos/salchipapas-3.jpg">
+                            <img src="../img/productos/salchipapas-3.jpg" class="card-img-top" alt="Salchipapa Ranchera">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Salchipapa Ranchera</h3>
+                                <p class="small text-muted mb-2">Papas, salchicha, tocineta y queso</p>
+                                <span class="precio-tag d-block">$ 16,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="salchipapa-mixta"
+                             data-nombre="Salchipapa Mixta"
+                             data-descripcion="Papas con salchicha y trozos de pollo"
+                             data-precio="17000"
+                             data-imagen="../img/productos/salchipapas-4.jpg">
+                            <img src="../img/productos/salchipapas-4.jpg" class="card-img-top" alt="Salchipapa Mixta">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Salchipapa Mixta</h3>
+                                <p class="small text-muted mb-2">Papas con salchicha y trozos de pollo</p>
+                                <span class="precio-tag d-block">$ 17,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="papas-fritas-simples"
+                             data-nombre="Papas Fritas Simples"
+                             data-descripcion="Crujientes, con sal fina"
+                             data-precio="9000"
+                             data-imagen="../img/productos/salchipapas-5.jpg">
+                            <img src="../img/productos/salchipapas-5.jpg" class="card-img-top" alt="Papas Fritas Simples">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Papas Fritas Simples</h3>
+                                <p class="small text-muted mb-2">Crujientes, con sal fina</p>
+                                <span class="precio-tag d-block">$ 9,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-postres" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Postres</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="postre-tres-leches"
+                             data-nombre="Postre Tres Leches"
+                             data-descripcion="Clásico postre húmedo bañado en tres leches"
+                             data-precio="9000"
+                             data-imagen="../img/productos/postres-1.jpg">
+                            <img src="../img/productos/postres-1.jpg" class="card-img-top" alt="Postre Tres Leches">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Postre Tres Leches</h3>
+                                <p class="small text-muted mb-2">Clásico postre húmedo bañado en tres leches</p>
+                                <span class="precio-tag d-block">$ 9,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="brownie-con-helado"
+                             data-nombre="Brownie con Helado"
+                             data-descripcion="Brownie tibio con bola de helado de vainilla"
+                             data-precio="11000"
+                             data-imagen="../img/productos/postres-2.jpg">
+                            <img src="../img/productos/postres-2.jpg" class="card-img-top" alt="Brownie con Helado">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Brownie con Helado</h3>
+                                <p class="small text-muted mb-2">Brownie tibio con bola de helado de vainilla</p>
+                                <span class="precio-tag d-block">$ 11,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="torta-de-chocolate"
+                             data-nombre="Torta de Chocolate"
+                             data-descripcion="Porción de torta húmeda de chocolate"
+                             data-precio="9500"
+                             data-imagen="../img/productos/postres-3.jpg">
+                            <img src="../img/productos/postres-3.jpg" class="card-img-top" alt="Torta de Chocolate">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Torta de Chocolate</h3>
+                                <p class="small text-muted mb-2">Porción de torta húmeda de chocolate</p>
+                                <span class="precio-tag d-block">$ 9,500</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="copa-de-helado"
+                             data-nombre="Copa de Helado"
+                             data-descripcion="Tres bolas de helado con salsa a elección"
+                             data-precio="10000"
+                             data-imagen="../img/productos/postres-4.jpg">
+                            <img src="../img/productos/postres-4.jpg" class="card-img-top" alt="Copa de Helado">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Copa de Helado</h3>
+                                <p class="small text-muted mb-2">Tres bolas de helado con salsa a elección</p>
+                                <span class="precio-tag d-block">$ 10,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="waffle-con-frutas"
+                             data-nombre="Waffle con Frutas"
+                             data-descripcion="Waffle crocante con frutas frescas y miel"
+                             data-precio="12000"
+                             data-imagen="../img/productos/postres-5.jpg">
+                            <img src="../img/productos/postres-5.jpg" class="card-img-top" alt="Waffle con Frutas">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Waffle con Frutas</h3>
+                                <p class="small text-muted mb-2">Waffle crocante con frutas frescas y miel</p>
+                                <span class="precio-tag d-block">$ 12,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-bebidas" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Bebidas</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="jugo-natural-de-lulo"
+                             data-nombre="Jugo Natural de Lulo"
+                             data-descripcion="Recién exprimido"
+                             data-precio="8000"
+                             data-imagen="../img/productos/bebidas-1.jpg">
+                            <img src="../img/productos/bebidas-1.jpg" class="card-img-top" alt="Jugo Natural de Lulo">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Jugo Natural de Lulo</h3>
+                                <p class="small text-muted mb-2">Recién exprimido</p>
+                                <span class="precio-tag d-block">$ 8,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="jugo-natural-de-maracuya"
+                             data-nombre="Jugo Natural de Maracuyá"
+                             data-descripcion="Recién exprimido"
+                             data-precio="8000"
+                             data-imagen="../img/productos/bebidas-2.jpg">
+                            <img src="../img/productos/bebidas-2.jpg" class="card-img-top" alt="Jugo Natural de Maracuyá">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Jugo Natural de Maracuyá</h3>
+                                <p class="small text-muted mb-2">Recién exprimido</p>
+                                <span class="precio-tag d-block">$ 8,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="jugo-natural-de-mora"
+                             data-nombre="Jugo Natural de Mora"
+                             data-descripcion="Recién exprimido"
+                             data-precio="8000"
+                             data-imagen="../img/productos/bebidas-3.jpg">
+                            <img src="../img/productos/bebidas-3.jpg" class="card-img-top" alt="Jugo Natural de Mora">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Jugo Natural de Mora</h3>
+                                <p class="small text-muted mb-2">Recién exprimido</p>
+                                <span class="precio-tag d-block">$ 8,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="gaseosa-personal"
+                             data-nombre="Gaseosa Personal"
+                             data-descripcion="350 ml, varios sabores"
+                             data-precio="5000"
+                             data-imagen="../img/productos/bebidas-4.jpg">
+                            <img src="../img/productos/bebidas-4.jpg" class="card-img-top" alt="Gaseosa Personal">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Gaseosa Personal</h3>
+                                <p class="small text-muted mb-2">350 ml, varios sabores</p>
+                                <span class="precio-tag d-block">$ 5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="limonada-de-coco"
+                             data-nombre="Limonada de Coco"
+                             data-descripcion="Limonada natural con coco"
+                             data-precio="9000"
+                             data-imagen="../img/productos/bebidas-5.jpg">
+                            <img src="../img/productos/bebidas-5.jpg" class="card-img-top" alt="Limonada de Coco">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Limonada de Coco</h3>
+                                <p class="small text-muted mb-2">Limonada natural con coco</p>
+                                <span class="precio-tag d-block">$ 9,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="cat-combos" class="mb-5 pt-4">
+            <h2 class="menu-categoria-titulo">Combos</h2>
+            <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="combo-el-personal"
+                             data-nombre="Combo El Personal"
+                             data-descripcion="Hamburguesa clásica, papas y bebida"
+                             data-precio="24000"
+                             data-imagen="../img/productos/combos-1.jpg">
+                            <img src="../img/productos/combos-1.jpg" class="card-img-top" alt="Combo El Personal">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Combo El Personal</h3>
+                                <p class="small text-muted mb-2">Hamburguesa clásica, papas y bebida</p>
+                                <span class="precio-tag d-block">$ 24,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="combo-el-parrandero"
+                             data-nombre="Combo El Parrandero"
+                             data-descripcion="2 hamburguesas, 2 bebidas y papas grandes"
+                             data-precio="42000"
+                             data-imagen="../img/productos/combos-2.jpg">
+                            <img src="../img/productos/combos-2.jpg" class="card-img-top" alt="Combo El Parrandero">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Combo El Parrandero</h3>
+                                <p class="small text-muted mb-2">2 hamburguesas, 2 bebidas y papas grandes</p>
+                                <span class="precio-tag d-block">$ 42,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="combo-la-cita"
+                             data-nombre="Combo La Cita"
+                             data-descripcion="2 hamburguesas gourmet, papas y 2 bebidas"
+                             data-precio="45000"
+                             data-imagen="../img/productos/combos-3.jpg">
+                            <img src="../img/productos/combos-3.jpg" class="card-img-top" alt="Combo La Cita">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Combo La Cita</h3>
+                                <p class="small text-muted mb-2">2 hamburguesas gourmet, papas y 2 bebidas</p>
+                                <span class="precio-tag d-block">$ 45,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="combo-de-salchichas-familiar"
+                             data-nombre="Combo de Salchichas Familiar"
+                             data-descripcion="Salchipapa familiar con 4 bebidas"
+                             data-precio="38000"
+                             data-imagen="../img/productos/combos-4.jpg">
+                            <img src="../img/productos/combos-4.jpg" class="card-img-top" alt="Combo de Salchichas Familiar">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Combo de Salchichas Familiar</h3>
+                                <p class="small text-muted mb-2">Salchipapa familiar con 4 bebidas</p>
+                                <span class="precio-tag d-block">$ 38,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2dot4">
+                        <div class="card card-producto producto-clicable" role="button" tabindex="0"
+                             data-bs-toggle="modal" data-bs-target="#modalProducto"
+                             data-slug="combo-duo-hamburguesas"
+                             data-nombre="Combo Dúo Hamburguesas"
+                             data-descripcion="2 hamburguesas clásicas con papas"
+                             data-precio="32000"
+                             data-imagen="../img/productos/combos-5.jpg">
+                            <img src="../img/productos/combos-5.jpg" class="card-img-top" alt="Combo Dúo Hamburguesas">
+                            <div class="card-body text-center">
+                                <h3 class="card-title h6">Combo Dúo Hamburguesas</h3>
+                                <p class="small text-muted mb-2">2 hamburguesas clásicas con papas</p>
+                                <span class="precio-tag d-block">$ 32,000</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-chay">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <h3 class="h5 footer-brand">
+                    <img src="../img/isotipo.png" alt="" width="30">
+                    CHAY Express
+                </h3>
+                <p class="mb-1 mt-3">📍 Bogotá, Colombia (Diana Turbay)</p>
+                <p class="mb-1">📞 300 123 4567</p>
+                <p class="mb-3">✉️ contacto@chayexpress.com</p>
+                <p class="small mb-0">© 2026 CHAY Express — Rico. Rápido. A tu manera.</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="h6 text-uppercase">Enlaces rápidos</h3>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+                    <li><a href="menu.html"><i class="bi bi-journal-text"></i>Menú</a></li>
+                    <li><a href="cuenta.html"><i class="bi bi-person-circle"></i> Mi Cuenta</a></li>
+                    <li class="nav-solo-invitado"><a href="inicio_sesion.html"><i class="bi bi-box-arrow-in-right"></i> Ingresar</a></li>
+                    <li class="nav-solo-invitado"><a href="registro.html"><i class="bi bi-person-plus"></i> Registrarse</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="h6 text-uppercase">Síguenos</h3>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2c-2.7 0-3.05.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.16-.56.55-.9 1.11-1.16 1.77-.25.64-.42 1.37-.47 2.43C2 8.95 2 9.3 2 12s.01 3.05.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.16 1.77.55.56 1.11.9 1.77 1.16.64.25 1.37.42 2.43.47C8.95 22 9.3 22 12 22s3.05-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.16.56-.55.9-1.11 1.16-1.77.25-.64.42-1.37.47-2.43.05-1.07.06-1.42.06-4.12s-.01-3.05-.06-4.12c-.05-1.06-.22-1.79-.47-2.43-.26-.66-.6-1.22-1.16-1.77-.55-.56-1.11-.9-1.77-1.16-.64-.25-1.37-.42-2.43-.47C15.05 2.01 14.7 2 12 2zm0 1.8c2.65 0 2.97.01 4.02.06.97.04 1.5.2 1.85.34.46.18.8.4 1.15.75.35.35.57.69.75 1.15.14.35.3.88.34 1.85.05 1.05.06 1.37.06 4.02s-.01 2.97-.06 4.02c-.04.97-.2 1.5-.34 1.85-.18.46-.4.8-.75 1.15-.35.35-.69.57-1.15.75-.35.14-.88.3-1.85.34-1.05.05-1.37.06-4.02.06s-2.97-.01-4.02-.06c-.97-.04-1.5-.2-1.85-.34-.46-.18-.8-.4-1.15-.75-.35-.35-.57-.69-.75-1.15-.14-.35-.3-.88-.34-1.85C3.8 14.97 3.8 14.65 3.8 12s.01-2.97.06-4.02c.04-.97.2-1.5.34-1.85.18-.46.4-.8.75-1.15.35-.35.69-.57 1.15-.75.35-.14.88-.3 1.85-.34C9.03 3.8 9.35 3.8 12 3.8zm0 3.05a5.15 5.15 0 100 10.3 5.15 5.15 0 000-10.3zm0 8.5a3.35 3.35 0 110-6.7 3.35 3.35 0 010 6.7zm5.35-8.7a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.6h2.9l.4-3.4h-3.3V7.8c0-.98.27-1.65 1.68-1.65h1.8V3.14C16.7 3.1 15.6 3 14.3 3c-2.7 0-4.6 1.65-4.6 4.68v2.32H6.8v3.4h2.9V22h3.8z"/></svg>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24"><path d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.6h-3.1v13.44c0 1.53-1.24 2.77-2.77 2.77a2.77 2.77 0 01-2.77-2.77 2.77 2.77 0 012.77-2.77c.28 0 .55.04.8.12V9.7a5.9 5.9 0 00-.8-.06A5.88 5.88 0 003.45 15.5a5.88 5.88 0 005.88 5.88 5.88 5.88 0 005.88-5.88V9.01a7.9 7.9 0 004.6 1.48V7.38a4.85 4.85 0 01-3.21-1.56z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Toast: confirmación de "agregar" / carrito -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastCarrito" class="toast align-items-center text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">🛒 El carrito se activa en la fase de Backend. ¡Ya casi!</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/api.js"></script><script src="../js/sesion.js"></script><script src="../js/carrito.js"></script><script src="../js/menu-backend.js"></script>
+
+
+</body>
+</html>

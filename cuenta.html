@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mi Cuenta — CHAY Express</title>
+
+	<link rel="icon" href="../img/isotipo.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="../css/estilos.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<nav class="navbar navbar-expand-lg navbar-chay sticky-top">
+		<div class="container">
+			<a class="navbar-brand d-flex align-items-center" href="index.html">
+				<img src="../img/isotipo.png" alt="Isotipo CHAY Express">
+				<span>CHAY Express</span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCuenta" aria-controls="navCuenta" aria-expanded="false" aria-label="Abrir menú">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navCuenta">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2 align-items-lg-center">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="menu.html"><i class="bi bi-journal-text"></i> Menú</a>
+					</li>
+					<li class="nav-item">
+						<form class="d-flex nav-buscador" role="search" method="GET" action="menu.html">
+							<input class="form-control form-control-sm" type="search" name="buscar" placeholder="Buscar en el menú..." aria-label="Buscar productos">
+						</form>
+					</li>
+					<li class="nav-item nav-solo-usuario">
+						<a class="nav-link active" href="cuenta.html" title="Mi Cuenta"><i class="bi bi-person-circle fs-5"></i></a>
+					</li>
+					<li class="nav-item nav-solo-invitado d-none">
+						<a class="nav-link" href="inicio_sesion.html" title="Ingresar"><i class="bi bi-person-circle fs-5"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="botonCarrito" title="Carrito"><i class="bi bi-cart3 fs-5"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main class="container py-5 flex-grow-1">
+		<div class="mb-4">
+			<h1 class="h3">Hola, <span data-usuario-nombre></span></h1>
+			<p class="text-muted">Administra tu cuenta, direcciones y pedidos.</p>
+		</div>
+
+		<div class="row g-4">
+			<aside class="col-md-3">
+				<div class="nav flex-column nav-pills shadow-sm p-2 bg-white rounded">
+					<button class="nav-link active" data-bs-toggle="pill" data-bs-target="#perfil">👤 Perfil</button>
+					<button class="nav-link" data-bs-toggle="pill" data-bs-target="#direcciones">📍 Direcciones</button>
+					<button class="nav-link" data-bs-toggle="pill" data-bs-target="#pedidos">📦 Mis Pedidos</button>
+					<button class="nav-link" data-bs-toggle="pill" data-bs-target="#puntos">⭐ Puntos CHAY</button>
+					<hr>
+					<button class="nav-link text-danger" id="cerrarSesion">Salir</button>
+				</div>
+			</aside>
+
+			<section class="col-md-9">
+				<div class="tab-content">
+					<div class="tab-pane fade show active card p-4" id="perfil">
+						<h2 class="h5">Datos personales</h2>
+						<form id="perfilForm" class="row g-3">
+							<div class="col-md-6">
+								<label>Nombre</label>
+								<input id="perfilNombre" class="form-control" required>
+							</div>
+							<div class="col-md-6">
+								<label>Apellido</label>
+								<input id="perfilApellido" class="form-control" required>
+							</div>
+							<div class="col-md-6">
+								<label>Correo</label>
+								<input id="perfilEmail" class="form-control" disabled>
+							</div>
+							<div class="col-md-6">
+								<label>Teléfono</label>
+								<input id="perfilTelefono" class="form-control">
+							</div>
+							<div class="col-12">
+								<button class="btn btn-primary">Guardar cambios</button>
+							</div>
+						</form>
+						<div id="perfilMsg" class="mt-2"></div>
+					</div>
+
+					<div class="tab-pane fade card p-4" id="direcciones">
+						<h2 class="h5">Direcciones de entrega</h2>
+						<div id="listaDirecciones" class="mb-4"></div>
+
+						<form id="direccionForm" class="row g-2">
+							<div class="col-md-4">
+								<label class="form-label" for="dirEtiqueta">Nombre de la dirección</label>
+								<input id="dirEtiqueta" class="form-control" placeholder="Casa / Trabajo" required>
+							</div>
+							<div class="col-md-8">
+								<label class="form-label" for="dirTexto">Dirección</label>
+								<input id="dirTexto" class="form-control" placeholder="Ej. Calle  Example # 00-00" required>
+							</div>
+							<div class="col-md-4">
+								<label class="form-label" for="dirBarrio">Barrio</label>
+								<input id="dirBarrio" class="form-control" placeholder="Barrio" required>
+							</div>
+							<div class="col-md-4">
+								<label class="form-label" for="dirLocalidad">Localidad</label>
+								<input id="dirLocalidad" class="form-control" placeholder="Localidad" required>
+							</div>
+							<div class="col-md-4">
+								<label class="form-label" for="dirTipo">Tipo de inmueble</label>
+								<select id="dirTipo" class="form-select" required>
+									<option value="casa">Casa</option>
+									<option value="apartamento">Apartamento</option>
+									<option value="edificio">Edificio</option>
+									<option value="conjunto">Conjunto residencial</option>
+									<option value="otro">Otro</option>
+								</select>
+							</div>
+							<div class="col-md-4" id="campoDetalleInmueble">
+								<label class="form-label" for="dirDetalle">Detalle</label>
+								<input id="dirDetalle" class="form-control" placeholder="Ej. Casa 12 / Interior 3">
+							</div>
+							<div class="col-md-4 campo-edificio">
+								<label class="form-label" for="dirTorre">Torre / bloque</label>
+								<input id="dirTorre" class="form-control" placeholder="Torre o bloque">
+							</div>
+							<div class="col-md-4 campo-edificio">
+								<label class="form-label" for="dirApartamento">Apartamento</label>
+								<input id="dirApartamento" class="form-control" placeholder="Número de apartamento">
+							</div>
+							<div class="col-12">
+								<label class="form-label" for="dirIndicaciones">Especificaciones para encontrar el inmueble</label>
+								<textarea id="dirIndicaciones" class="form-control" rows="2" placeholder="Portería, piso, color de la puerta, referencias..."></textarea>
+							</div>
+							<div class="col-md-4">
+								<input id="dirLat" type="hidden">
+								<input id="dirLng" type="hidden">
+							</div>
+							<div class="col-12 form-check">
+								<input id="dirPred" type="checkbox" class="form-check-input">
+								<label class="form-check-label">Usar como principal</label>
+							</div>
+							<div class="col-12">
+								<button class="btn btn-outline-primary">+ Agregar dirección</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="tab-pane fade card p-4" id="pedidos">
+						<h2 class="h5">Mis Pedidos</h2>
+						<div id="listaPedidos"></div>
+					</div>
+
+					<div class="tab-pane fade card p-4" id="puntos">
+						<h2 class="h5">Puntos CHAY</h2>
+						<div class="display-5" id="puntosChay">0</div>
+						<p class="text-muted">Recibes 10 puntos por cada producto comprado. Cada punto equivale a $100 de descuento en el carrito.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer-chay">
+		<div class="container">
+			<div class="row gy-4">
+				<div class="col-md-4">
+					<h3 class="h5 footer-brand">
+						<img src="../img/isotipo.png" alt="" width="30">
+						CHAY Express
+					</h3>
+					<p class="mb-1 mt-3">📍 Bogotá, Colombia (Diana Turbay)</p>
+					<p class="mb-1">📞 300 123 4567</p>
+					<p class="mb-3">✉️ contacto@chayexpress.com</p>
+					<p class="small mb-0">© 2026 CHAY Express — Rico. Rápido. A tu manera.</p>
+				</div>
+				<div class="col-md-4">
+					<h3 class="h6 text-uppercase">Enlaces rápidos</h3>
+					<ul class="list-unstyled footer-links">
+						<li><a href="index.html"><i class="bi bi-house-door"></i> Inicio</a></li>
+						<li><a href="menu.html"><i class="bi bi-journal-text"></i>Menú</a></li>
+						<li><a href="cuenta.html"><i class="bi bi-person-circle"></i> Mi Cuenta</a></li>
+						<li class="nav-solo-invitado"><a href="inicio_sesion.html"><i class="bi bi-box-arrow-in-right"></i> Ingresar</a></li>
+						<li class="nav-solo-invitado"><a href="registro.html"><i class="bi bi-person-plus"></i> Registrarse</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h3 class="h6 text-uppercase">Síguenos</h3>
+					<div class="footer-social">
+						<a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+						<a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+						<a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../js/api.js"></script>
+	<script src="../js/sesion.js"></script>
+	<script src="../js/carrito.js"></script>
+	<script src="../js/cuenta.js"></script>
+</body>
+</html>
